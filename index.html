@@ -10,89 +10,325 @@
       type="image/x-icon"
       sizes="96x96"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <title>Pricing Table | devChallenges.io</title>
-
-    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
     <style>
+      :root {
+        --default-fs: 16px;
+        --default-ff: "Be Vietnam Pro", sans-serif;
+
+        --white: #ffffff;
+        --extra-light-grey: #F8FAFC;
+        --light-grey: #E5E7EB;
+        --mid-grey: #4D556233;
+        --dark-grey: #4D5562;
+        --black: #121826;
+        --brown: #7C4F1E;
+        --blue: #263FA9;
+
+        --header-background-clr: var(--extra-light-grey);
+        --header-text-clr: var(--dark-grey);
+        --plan-name-clr: var(--blue);
+        --plan-period-clr: var(--dark-grey);
+        --popular-background-clr: var(--black);
+        --popular-clr: var(--white);
+        --popular-plan-name-bg-clr: var(--blue);
+        --popular-link-clr: var(--white);
+        --list-item-headings-background: var(--extra-light-grey);
+        --cta-background-clr: var(--brown);
+        --cta-link-clr: var(--blue);
+        --border-clr: var(--light-grey);
+      }
       * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+        margin: 0; padding: 0; box-sizing: border-box; outline: none;
       }
-
-      body {
-        height: 100vh;
+      html {
+        font-size: var(--default-fs);
+        font-family: var(--default-ff);
       }
-
-      .author-info {
-        font-size: 14px;
-        text-align: center;
-        margin-top: 16px;
-        color: rgb(55, 65, 81);
+      header {
+        border-bottom: 1px solid var(--border-clr);
+        background-color: var(--header-background-clr);
+        background-image: url('resources/bg-pattern.png');
       }
-
-      .author-info a {
+      .header-container {
+        margin: auto;
+        padding: 3.25rem 0;
+        width: 28rem;
+      }
+      .header-title {
+        margin-bottom: .75rem;
+      }
+      .header-text {
+        color: var(--header-text-clr);
+      }
+      main {
+        margin-top: 5.25rem;
+        padding: 0 4.5rem;
+      }
+      .plans-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .plan {
+        padding-top: 1.5rem;
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+      .plan-popular {
+        color: var(--white);
+        background-color: var(--popular-background-clr);
+      }
+      .plan-popular .plan-specs-list li {
+        border-bottom-color: var(--black);
+      }
+      .plan-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2.88rem;
+      }
+      .plan-name {
+        font-weight: 500;
+        padding: .250rem .750rem;
+      }
+      .plan-name:not(.badge) {
+        color: var(--plan-name-clr);
+      }
+      .plan-period:not(.white) {
+        color: var(--plan-period-clr);
+      }
+      .plan-price {
+        font-size: 4rem;
+        font-weight: 600;
+        padding: .75rem 0 0.38rem 0;
+      }
+      .plan-period:not(.plan-period) {
+        color: red;
+      }
+      .plan-specs-list {
+        list-style: none;
+      }
+      .plan-specs-list li {
+        display: flex;
+        border-bottom: 1px solid var(--border-clr);
+      }
+      .list-item {
+        padding: 1rem 0;
+        justify-content: center;
+      }
+      .list-item-heading {
+        padding: 1rem .75rem;
+        font-weight: 600;
+        background-color: var(--list-item-headings-background);
+      }
+      .list-item-heading:first-child {
+        border-top-left-radius: 1rem;
+      }
+      .list-item-heading:last-child {
+        border-bottom-left-radius: 1rem;
+      }
+      .cta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem 0;
+      }
+      .cta-link {
         text-decoration: none;
+        font-weight: 600;
+        color: var(--cta-link-clr);
+      }
+      .plan-popular .cta {
+        background-color: var(--cta-background-clr);
+      }
+      .popular-link {
+        color: var(--popular-link-clr);
+      }
+
+      /* Utilities */
+      .text-center {
+        text-align: center;
+      }
+      .badge {
+        border-radius: 999px;
+        background-color: var(--popular-plan-name-bg-clr);
       }
     </style>
   </head>
   <body>
-    <!-- 
-      Pricing & Plans
-      
-      Discover the plan that unlocks the transformative power of digital art and join our vibrant community today.
-      
-      Website number
-      
-      Server storage
-      
-      Database
-      
-      Unmetered Bandwidth
-      
-      SSD Disk
-      
-      VCPUS Fontworld
-      
-      Worldpress install
-      
-      Server speed
-      
-      Free
-      
-      $0
-      
-      Per month
-      
-      100 GB
-      
-      Get Started
-      
-      Team
-      
-      $59
-      
-      500 GB
-      
-      Popular
-      
-      $99
-      
-      1 TB
-      
-      Unlimited
-      
-      Enterprise
-      
-      $299
-  -->
 
-    <div class="author-info">
-      Coded by <a href="#">Your Name Here</a> | Challenge by
-      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
-        >devChallenges.io</a
-      >.
-    </div>
+    <header>
+      <div class="header-container">
+        <h1 class="header-title text-center">Pricing & Plans</h1>
+        <p class="header-text text-center">Discover the plan that unlocks the transformative power of digital art and join our vibrant community today.</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="plans-grid">
+        <div class="plans-grid-item">
+          <div class="spacing" style="min-height: 13.55rem;"></div>
+          <ul class="plan-specs-list">
+              <li class="list-item-heading">Website number</li>
+              <li class="list-item-heading">Server storage</li>
+              <li class="list-item-heading">Database</li>
+              <li class="list-item-heading">Unmetered Bandwidth</li>
+              <li class="list-item-heading">SSD Disk</li>
+              <li class="list-item-heading">VCPUS Fontworld</li>
+              <li class="list-item-heading">Worldpress install</li>
+              <li class="list-item-heading">Server speed</li>
+            </ul>
+        </div>
+        <div class="plans-grid-item">
+          <div class="plan plan-free">
+            <div class="plan-header">
+              <span class="plan-name">Free</span>
+              <h2 class="plan-price">$0</h2>
+              <span class="plan-period">Per month</span>
+            </div>
+            <ul class="plan-specs-list">
+              <li class="list-item">01</li>
+              <li class="list-item">100 GB</li>
+              <li class="list-item">-</li>
+              <li class="list-item">-</li>
+              <li class="list-item">-</li>
+              <li class="list-item">-</li>
+              <li class="list-item">-</li>
+              <li class="list-item">-</li>
+            </ul>
+            <div class="cta">
+              <a href="#" class="cta-link">Get Started</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11.29 6.29006C11.1963 6.38302 11.1219 6.49362 11.0711 6.61548C11.0203 6.73734 10.9942 6.86805 10.9942 7.00006C10.9942 7.13207 11.0203 7.26278 11.0711 7.38464C11.1219 7.5065 11.1963 7.61709 11.29 7.71006L14.59 11.0001L7 11.0001C6.73478 11.0001 6.48043 11.1054 6.29289 11.293C6.10536 11.4805 6 11.7348 6 12.0001C6 12.2653 6.10536 12.5196 6.29289 12.7072C6.48043 12.8947 6.73478 13.0001 7 13.0001L14.59 13.0001L11.29 16.2901C11.1017 16.4784 10.9959 16.7338 10.9959 17.0001C10.9959 17.2664 11.1017 17.5218 11.29 17.7101C11.4783 17.8984 11.7337 18.0042 12 18.0042C12.2663 18.0042 12.5217 17.8984 12.71 17.7101L17.71 12.7101C17.801 12.615 17.8724 12.5028 17.92 12.3801C17.9729 12.2604 18.0002 12.1309 18.0002 12.0001C18.0002 11.8692 17.9729 11.7398 17.92 11.6201C17.8724 11.4973 17.801 11.3852 17.71 11.2901L12.71 6.29006C12.617 6.19633 12.5064 6.12194 12.3846 6.07117C12.2627 6.0204 12.132 5.99426 12 5.99426C11.868 5.99426 11.7373 6.0204 11.6154 6.07117C11.4936 6.12194 11.383 6.19633 11.29 6.29006Z" fill="#3662E3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="plans-grid-item">
+          <div class="plan plan-team">
+            <div class="plan-header">
+              <span class="plan-name">Team</span>
+              <h2 class="plan-price">$59</h2>
+              <span class="plan-period">Per month</span>
+            </div>
+            <ul class="plan-specs-list">
+              <li class="list-item">10</li>
+              <li class="list-item">500 GB</li>
+              <li class="list-item">15</li>
+              <li class="list-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="#121826"/>
+                </svg>
+              </li>
+              <li class="list-item">-</li>
+              <li class="list-item">-</li>
+              <li class="list-item">-</li>
+              <li class="list-item">-</li>
+            </ul>
+            <div class="cta">
+              <a href="#" class="cta-link">Get Started</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11.29 6.29006C11.1963 6.38302 11.1219 6.49362 11.0711 6.61548C11.0203 6.73734 10.9942 6.86805 10.9942 7.00006C10.9942 7.13207 11.0203 7.26278 11.0711 7.38464C11.1219 7.5065 11.1963 7.61709 11.29 7.71006L14.59 11.0001L7 11.0001C6.73478 11.0001 6.48043 11.1054 6.29289 11.293C6.10536 11.4805 6 11.7348 6 12.0001C6 12.2653 6.10536 12.5196 6.29289 12.7072C6.48043 12.8947 6.73478 13.0001 7 13.0001L14.59 13.0001L11.29 16.2901C11.1017 16.4784 10.9959 16.7338 10.9959 17.0001C10.9959 17.2664 11.1017 17.5218 11.29 17.7101C11.4783 17.8984 11.7337 18.0042 12 18.0042C12.2663 18.0042 12.5217 17.8984 12.71 17.7101L17.71 12.7101C17.801 12.615 17.8724 12.5028 17.92 12.3801C17.9729 12.2604 18.0002 12.1309 18.0002 12.0001C18.0002 11.8692 17.9729 11.7398 17.92 11.6201C17.8724 11.4973 17.801 11.3852 17.71 11.2901L12.71 6.29006C12.617 6.19633 12.5064 6.12194 12.3846 6.07117C12.2627 6.0204 12.132 5.99426 12 5.99426C11.868 5.99426 11.7373 6.0204 11.6154 6.07117C11.4936 6.12194 11.383 6.19633 11.29 6.29006Z" fill="#3662E3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="plans-grid-item">
+          <div class="plan plan-popular">
+            <div class="plan-header">
+              <span class="plan-name badge">Popular</span>
+              <h2 class="plan-price">$99</h2>
+              <span class="plan-period white">Per month</span>
+            </div>
+            <ul class="plan-specs-list">
+              <li class="list-item">50</li>
+              <li class="list-item">1 TB</li>
+              <li class="list-item">Unlimited</li>
+              <li class="list-item">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="white"/>
+                </svg>
+              </li>
+              <li class="list-item">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="white"/>
+                </svg>
+              </li>
+              <li class="list-item">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="white"/>
+                </svg>
+              </li>
+              <li class="list-item">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="white"/>
+                </svg>
+              </li>
+              <li class="list-item">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="white"/>
+                </svg>
+              </li>
+            </ul>
+            <div class="cta">
+              <a href="#" class="cta-link popular-link">Get Started</a>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.29 6.29006C11.1963 6.38302 11.1219 6.49362 11.0711 6.61548C11.0203 6.73734 10.9942 6.86805 10.9942 7.00006C10.9942 7.13207 11.0203 7.26278 11.0711 7.38464C11.1219 7.5065 11.1963 7.61709 11.29 7.71006L14.59 11.0001L7 11.0001C6.73478 11.0001 6.48043 11.1054 6.29289 11.293C6.10536 11.4805 6 11.7348 6 12.0001C6 12.2653 6.10536 12.5196 6.29289 12.7072C6.48043 12.8947 6.73478 13.0001 7 13.0001L14.59 13.0001L11.29 16.2901C11.1017 16.4784 10.9959 16.7338 10.9959 17.0001C10.9959 17.2664 11.1017 17.5218 11.29 17.7101C11.4783 17.8984 11.7337 18.0042 12 18.0042C12.2663 18.0042 12.5217 17.8984 12.71 17.7101L17.71 12.7101C17.801 12.615 17.8724 12.5028 17.92 12.3801C17.9729 12.2604 18.0002 12.1309 18.0002 12.0001C18.0002 11.8692 17.9729 11.7398 17.92 11.6201C17.8724 11.4973 17.801 11.3852 17.71 11.2901L12.71 6.29006C12.617 6.19633 12.5064 6.12194 12.3846 6.07117C12.2627 6.0204 12.132 5.99426 12 5.99426C11.868 5.99426 11.7373 6.0204 11.6154 6.07117C11.4936 6.12194 11.383 6.19633 11.29 6.29006Z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="plans-grid-item">
+          <div class="plan plan-enterprise">
+            <div class="plan-header">
+              <span class="plan-name">Enterprise</span>
+              <h2 class="plan-price">$299</h2>
+              <span class="plan-period">Per month</span>
+            </div>
+            <ul class="plan-specs-list">
+              <li class="list-item">Unlimited</li>
+              <li class="list-item">Unlimited</li>
+              <li class="list-item">Unlimited</li>
+              <li class="list-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="#121826"/>
+                </svg>
+              </li>
+              <li class="list-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="#121826"/>
+                </svg>
+              </li>
+              <li class="list-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="#121826"/>
+                </svg>
+              </li>
+              <li class="list-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="#121826"/>
+                </svg>
+              </li>
+              <li class="list-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M15.5832 6C15.2498 5.66667 14.7498 5.66667 14.4165 6L8.1665 12.25L5.58317 9.66667C5.24984 9.33333 4.74984 9.33333 4.4165 9.66667C4.08317 10 4.08317 10.5 4.4165 10.8333L7.58317 14C7.74984 14.1667 7.9165 14.25 8.1665 14.25C8.4165 14.25 8.58317 14.1667 8.74984 14L15.5832 7.16667C15.9165 6.83333 15.9165 6.33333 15.5832 6Z" fill="#121826"/>
+                </svg>
+              </li>
+            </ul>
+            <div class="cta">
+              <a href="#" class="cta-link">Get Started</a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11.29 6.29006C11.1963 6.38302 11.1219 6.49362 11.0711 6.61548C11.0203 6.73734 10.9942 6.86805 10.9942 7.00006C10.9942 7.13207 11.0203 7.26278 11.0711 7.38464C11.1219 7.5065 11.1963 7.61709 11.29 7.71006L14.59 11.0001L7 11.0001C6.73478 11.0001 6.48043 11.1054 6.29289 11.293C6.10536 11.4805 6 11.7348 6 12.0001C6 12.2653 6.10536 12.5196 6.29289 12.7072C6.48043 12.8947 6.73478 13.0001 7 13.0001L14.59 13.0001L11.29 16.2901C11.1017 16.4784 10.9959 16.7338 10.9959 17.0001C10.9959 17.2664 11.1017 17.5218 11.29 17.7101C11.4783 17.8984 11.7337 18.0042 12 18.0042C12.2663 18.0042 12.5217 17.8984 12.71 17.7101L17.71 12.7101C17.801 12.615 17.8724 12.5028 17.92 12.3801C17.9729 12.2604 18.0002 12.1309 18.0002 12.0001C18.0002 11.8692 17.9729 11.7398 17.92 11.6201C17.8724 11.4973 17.801 11.3852 17.71 11.2901L12.71 6.29006C12.617 6.19633 12.5064 6.12194 12.3846 6.07117C12.2627 6.0204 12.132 5.99426 12 5.99426C11.868 5.99426 11.7373 6.0204 11.6154 6.07117C11.4936 6.12194 11.383 6.19633 11.29 6.29006Z" fill="#3662E3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
   </body>
 </html>
