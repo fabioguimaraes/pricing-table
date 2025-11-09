@@ -149,6 +149,32 @@
         color: var(--popular-link-clr);
       }
 
+      @media screen and (max-width: 1024px) {
+        .plans-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .free {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .plans-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .free, .team {
+          display: none;
+        }
+        .popular {
+          order: 3;
+        }
+        .enterprise {
+          order: 2;
+        }
+      }
+
       /* Utilities */
       .text-center {
         text-align: center;
@@ -183,7 +209,7 @@
               <li class="list-item-heading">Server speed</li>
             </ul>
         </div>
-        <div class="plans-grid-item">
+        <div class="plans-grid-item free">
           <div class="plan plan-free">
             <div class="plan-header">
               <span class="plan-name">Free</span>
@@ -208,7 +234,7 @@
             </div>
           </div>
         </div>
-        <div class="plans-grid-item">
+        <div class="plans-grid-item team">
           <div class="plan plan-team">
             <div class="plan-header">
               <span class="plan-name">Team</span>
@@ -237,7 +263,7 @@
             </div>
           </div>
         </div>
-        <div class="plans-grid-item">
+        <div class="plans-grid-item popular">
           <div class="plan plan-popular">
             <div class="plan-header">
               <span class="plan-name badge">Popular</span>
@@ -282,7 +308,7 @@
             </div>
           </div>
         </div>
-        <div class="plans-grid-item">
+        <div class="plans-grid-item enterprise">
           <div class="plan plan-enterprise">
             <div class="plan-header">
               <span class="plan-name">Enterprise</span>
